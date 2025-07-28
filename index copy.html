@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockLight - Your Secret Edge in the Markets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-bg': '#0f172a',
+                        'dark-bgSecondary': '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(to right, #22d3ee, #3b82f6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        .animation-delay-200 {
+            animation-delay: 200ms;
+        }
+        .animation-delay-250 {
+            animation-delay: 250ms;
+        }
+        .animation-delay-300 {
+            animation-delay: 300ms;
+        }
+        .animation-delay-400 {
+            animation-delay: 400ms;
+        }
+        .animation-delay-500 {
+            animation-delay: 500ms;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 section-container text-center">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-center mb-6 animate-fade-in">
+                    <span class="text-white">StockLight</span>
+                </h1>
+                
+                <h2 class="text-2xl md:text-3xl text-center mb-8 text-cyan-400 font-medium animate-fade-in animation-delay-200">
+                    Your Secret Edge in the Markets
+                </h2>
+
+                <div class="mb-8 animate-fade-in animation-delay-250">
+                    <div class="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-xl p-6 border border-cyan-500/20 backdrop-blur-sm max-w-4xl mx-auto">
+                        <p class="text-lg md:text-xl text-white font-semibold text-center leading-relaxed">
+                            "With StockLight, you get one‑on‑one attention our platform watches the market for you and keeps you updated on what truly matters."
+                        </p>
+                        <div class="flex justify-center mt-4">
+                            <div class="flex items-center gap-2 text-cyan-400 text-sm">
+                                <span class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></span>
+                                <span class="font-medium">Personalized Market Intelligence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xl md:text-2xl text-gray-300 text-center mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in animation-delay-300">
+                    Track what matters. Get alerts that work. Make smarter investment decisions with AI-powered insights.
+                </p>
+
+                <!-- Community Links -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in animation-delay-400">
+                    <a
+                        href="https://discord.gg/7EYQWrkb"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-200 hover:scale-105 shadow-lg"
+                    >
+                        Join Our Community
+                    </a>
+                </div>
+
+                <div class="text-center animate-fade-in animation-delay-500">
+                    <p class="text-gray-400 text-sm mb-4">Trusted by professional traders</p>
+                    <div class="flex justify-center items-center gap-8 text-gray-500 text-sm">
+                        <span>🔒 Secure</span>
+                        <span>⚡ Real-time</span>
+                        <span>🤖 AI-Powered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Different Section -->
+    <section class="py-20 bg-dark-bgSecondary/50">
+        <div class="section-container text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                    Not Just Data – Real Understanding
+                </h2>
+                
+                <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+                    While others flood you with noise, we deliver clarity that matters.
+                </p>
+                
+                <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                    <div class="flex items-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <span class="text-white font-bold text-lg">C</span>
+                            </div>
+                            <span class="text-2xl font-semibold gradient-text">Clarity</span>
+                        </div>
+                        <div class="hidden md:block w-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent ml-8"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <span class="text-white font-bold text-lg">C</span>
+                            </div>
+                            <span class="text-2xl font-semibold gradient-text">Context</span>
+                        </div>
+                        <div class="hidden md:block w-8 h-px bg-gradient-to-r from-transparent via-cyan-500 to-transparent ml-8"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full flex items-center justify-center mb-4 mx-auto">
+                                <span class="text-white font-bold text-lg">C</span>
+                            </div>
+                            <span class="text-2xl font-semibold gradient-text">Confidence</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+        <div class="section-container">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Meet the AI Dream Team</h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Our specialized AI agents bring decades of combined expertise across every corner of the market.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sophie Morgan Card -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-cyan-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Sophie Morgan</h3>
+                            <p class="text-cyan-400">Momentum & Mega Cap Specialist</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Confident trend-spotter with sharp market timing expertise. Known for breaking down complex ideas into clear insights.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Momentum Trading</span>
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">FAANG Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Raj Patel Card -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-cyan-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="agents/Agents/Raj Patel.png" alt="Raj Patel" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Raj Patel</h3>
+                            <p class="text-cyan-400">Biotech & Pharma Authority</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Scientifically rigorous with deep biotech knowledge. Passionate about AI transforming healthcare.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">FDA Approvals</span>
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Clinical Trials</span>
+                    </div>
+                </div>
+
+                <!-- Nova Qubit Card -->
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6 border border-cyan-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <img src="agents/Agents/Nova Qubit.png" alt="Nova Qubit" class="w-16 h-16 rounded-full">
+                        <div>
+                            <h3 class="text-xl font-semibold text-white">Nova Qubit</h3>
+                            <p class="text-cyan-400">Quantum Computing Pioneer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Tech-forward quantum expert who makes complex quantum concepts accessible to investors.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Quantum Computing</span>
+                        <span class="px-2 py-1 bg-cyan-500/10 text-cyan-400 rounded-full text-sm">Future Tech</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-20 bg-dark-bgSecondary/50">
+        <div class="section-container">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Crystal-Clear Market Updates</h3>
+                    <p class="text-gray-300">Daily stock news simplified into what actually matters.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Smart Watchlist</h3>
+                    <p class="text-gray-300">Follow only what matters to you—signal, not clutter.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Context-Rich Analysis</h3>
+                    <p class="text-gray-300">Every event framed: the 'so what' in plain language.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Conversation-Ready Insights</h3>
+                    <p class="text-gray-300">Talk about the market with confidence anywhere.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Beyond the Headlines</h3>
+                    <p class="text-gray-300">Hidden links and implications normal feeds miss.</p>
+                </div>
+                <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
+                    <h3 class="text-xl font-semibold text-white mb-3">Unique & Flexible Tracking</h3>
+                    <p class="text-gray-300">Broad vision that surfaces unexpected opportunities.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-bg border-t border-gray-800">
+        <div class="section-container py-12">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                    <!-- Logo & Description -->
+                    <div class="md:col-span-2">
+                        <a href="/" class="text-2xl font-bold gradient-text mb-4 inline-block">
+                            StockLight
+                        </a>
+                        <p class="text-gray-400 max-w-md leading-relaxed">
+                            Your secret edge in the markets. Transforming chaotic market noise into clear, conversation‑ready insight.
+                        </p>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">Community</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="https://twitter.com/stocklight" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    Twitter
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://discord.gg/7EYQWrkb" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    Discord
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://linkedin.com/company/stocklight" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    LinkedIn
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Legal Links -->
+                    <div>
+                        <h3 class="text-white font-semibold mb-4">Legal</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <a href="/content/privacy.md" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/content/disclaimer.md" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    Disclaimer
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:contact@stocklight.com" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-8 text-center">
+                    <p class="text-gray-400">&copy; 2025 StockLight. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
