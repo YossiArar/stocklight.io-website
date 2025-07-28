@@ -11,17 +11,14 @@
                 extend: {
                     colors: {
                         'dark-bg': '#0a0d14',
-                        'dark-bgSecondary': '#131620',
-                        'dark-surface': '#1a1d29',
-                        'primary-blue': '#1e40af',
-                        'secondary-blue': '#3730a3',
-                        'accent-gold': '#d97706',
-                        'accent-silver': '#64748b',
-                        'text-primary': '#f1f5f9',
-                        'text-secondary': '#cbd5e1',
-                        'text-muted': '#64748b',
-                        'success-green': '#059669',
-                        'danger-red': '#dc2626'
+                        'dark-bgSecondary': '#0f1419',
+                        'dark-surface': '#1a1f2e',
+                        'primary-cyan': '#4db6d4',
+                        'primary-blue': '#5b82f6',
+                        'accent-gold': '#d4af37',
+                        'text-primary': '#e2e8f0',
+                        'text-secondary': '#94a3b8',
+                        'text-muted': '#475569'
                     }
                 }
             }
@@ -146,15 +143,15 @@
                     <span class="text-xl font-bold text-white">StockLight</span>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#agents" class="text-text-secondary hover:text-accent-gold transition-colors font-medium">Agents</a>
-                    <a href="#features" class="text-text-secondary hover:text-accent-gold transition-colors font-medium">Features</a>
-                    <a href="#roadmap" class="text-text-secondary hover:text-accent-gold transition-colors font-medium">Roadmap</a>
+                    <a href="#agents" class="text-text-secondary hover:text-text-primary transition-colors font-medium">Agents</a>
+                    <a href="#features" class="text-text-secondary hover:text-text-primary transition-colors font-medium">Features</a>
+                    <a href="#roadmap" class="text-text-secondary hover:text-text-primary transition-colors font-medium">Roadmap</a>
                 </div>
                 <div class="hidden md:flex items-center gap-4">
-                    <a href="https://www.patreon.com/stocklight" target="_blank" class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-amber-500/30 border border-amber-400/20">
+                    <a href="https://www.patreon.com/stocklight" target="_blank" class="bg-accent-gold text-dark-bg px-6 py-2.5 rounded-lg font-semibold hover:bg-accent-gold/90 transition-all duration-200 shadow-lg">
                         Support Us
                     </a>
-                    <a href="https://discord.com/invite/mpTXWNWJ" target="_blank" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-xl font-bold hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-blue-500/30 border border-blue-400/20">
+                    <a href="https://discord.com/invite/mpTXWNWJ" target="_blank" class="border border-text-muted text-text-secondary hover:text-text-primary hover:border-text-secondary px-6 py-2.5 rounded-lg font-semibold transition-all duration-200">
                         Join Discord
                     </a>
                 </div>
@@ -287,97 +284,87 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                         <!-- Sophie Morgan Card -->
-                        <div class="bg-gradient-to-br from-dark-surface/80 to-dark-bgSecondary/80 rounded-2xl p-8 border border-primary-cyan/25 hover:border-primary-cyan/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-primary-cyan/20">
-                            <div class="flex items-start gap-6 mb-6">
-                                <div class="relative flex-shrink-0">
-                                    <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
-                                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-primary-cyan rounded-full border-2 border-dark-bg animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Sophie Morgan</h3>
-                                    <p class="text-primary-cyan font-semibold text-lg">Momentum & Mega Cap Specialist</p>
-                                </div>
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                            <div class="relative mb-6">
+                                <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-full h-48 rounded-lg object-cover">
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
                             </div>
-                            <p class="text-text-secondary mb-6 text-base leading-relaxed">Confident trend-spotter with sharp market timing expertise. Known for breaking down complex ideas into clear insights and spotting hot momentum breakouts.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-primary-cyan/15 text-primary-cyan rounded-full text-sm font-semibold border border-primary-cyan/30 shadow-sm">FAANG Expert</span>
-                                <span class="px-4 py-2 bg-accent-gold/15 text-accent-gold rounded-full text-sm font-semibold border border-accent-gold/30 shadow-sm">Breakout Detection</span>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-bold text-text-primary mb-1">Sophie Morgan</h3>
+                                <p class="text-primary-cyan font-medium">Momentum & Mega Cap Specialist</p>
+                            </div>
+                            <p class="text-text-secondary mb-4 text-sm leading-relaxed">Confident trend-spotter with sharp market timing expertise. Known for breaking down complex ideas into clear insights and spotting hot momentum breakouts.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">FAANG Expert</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Breakout Detection</span>
                             </div>
                         </div>
 
                         <!-- Raj Patel Card -->
-                        <div class="bg-gradient-to-br from-dark-surface/80 to-dark-bgSecondary/80 rounded-2xl p-8 border border-primary-cyan/25 hover:border-primary-cyan/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-primary-cyan/20">
-                            <div class="flex items-start gap-6 mb-6">
-                                <div class="relative flex-shrink-0">
-                                    <img src="agents/Agents/Raj Patel.png" alt="Raj Patel" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
-                                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-primary-cyan rounded-full border-2 border-dark-bg animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Raj Patel</h3>
-                                    <p class="text-primary-cyan font-semibold text-lg">Biotech & Pharma Authority</p>
-                                </div>
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                            <div class="relative mb-6">
+                                <img src="agents/Agents/Raj Patel.png" alt="Raj Patel" class="w-full h-48 rounded-lg object-cover">
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
                             </div>
-                            <p class="text-text-secondary mb-6 text-base leading-relaxed">PhD in Molecular Biology from Stanford, 10+ years at leading biotech firms. Passionate about AI transforming healthcare with scientifically rigorous analysis.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-primary-cyan/15 text-primary-cyan rounded-full text-sm font-semibold border border-primary-cyan/30 shadow-sm">FDA Approvals</span>
-                                <span class="px-4 py-2 bg-accent-gold/15 text-accent-gold rounded-full text-sm font-semibold border border-accent-gold/30 shadow-sm">Clinical Trials</span>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-bold text-text-primary mb-1">Raj Patel</h3>
+                                <p class="text-primary-cyan font-medium">Biotech & Pharma Authority</p>
+                            </div>
+                            <p class="text-text-secondary mb-4 text-sm leading-relaxed">PhD in Molecular Biology from Stanford, 10+ years at leading biotech firms. Passionate about AI transforming healthcare with scientifically rigorous analysis.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">FDA Approvals</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Clinical Trials</span>
                             </div>
                         </div>
 
                         <!-- Nova Qubit Card -->
-                        <div class="bg-gradient-to-br from-dark-surface/80 to-dark-bgSecondary/80 rounded-2xl p-8 border border-primary-cyan/25 hover:border-primary-cyan/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-primary-cyan/20">
-                            <div class="flex items-start gap-6 mb-6">
-                                <div class="relative flex-shrink-0">
-                                    <img src="agents/Agents/Nova Qubit.png" alt="Nova Qubit" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
-                                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-primary-cyan rounded-full border-2 border-dark-bg animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Nova Qubit</h3>
-                                    <p class="text-primary-cyan font-semibold text-lg">Quantum Computing Pioneer</p>
-                                </div>
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                            <div class="relative mb-6">
+                                <img src="agents/Agents/Nova Qubit.png" alt="Nova Qubit" class="w-full h-48 rounded-lg object-cover">
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
                             </div>
-                            <p class="text-text-secondary mb-6 text-base leading-relaxed">Tech-forward quantum expert who makes complex quantum concepts accessible to investors. Spots emerging trends early in the quantum revolution.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-primary-cyan/15 text-primary-cyan rounded-full text-sm font-semibold border border-primary-cyan/30 shadow-sm">Quantum Tech</span>
-                                <span class="px-4 py-2 bg-accent-gold/15 text-accent-gold rounded-full text-sm font-semibold border border-accent-gold/30 shadow-sm">Future Tech</span>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-bold text-text-primary mb-1">Nova Qubit</h3>
+                                <p class="text-primary-cyan font-medium">Quantum Computing Pioneer</p>
+                            </div>
+                            <p class="text-text-secondary mb-4 text-sm leading-relaxed">Tech-forward quantum expert who makes complex quantum concepts accessible to investors. Spots emerging trends early in the quantum revolution.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Quantum Tech</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Future Tech</span>
                             </div>
                         </div>
 
                         <!-- Max Ryder Card -->
-                        <div class="bg-gradient-to-br from-dark-surface/80 to-dark-bgSecondary/80 rounded-2xl p-8 border border-primary-cyan/25 hover:border-primary-cyan/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-primary-cyan/20">
-                            <div class="flex items-start gap-6 mb-6">
-                                <div class="relative flex-shrink-0">
-                                    <img src="agents/Agents/Max Ryder.png" alt="Max Ryder" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
-                                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-primary-cyan rounded-full border-2 border-dark-bg animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Max Ryder</h3>
-                                    <p class="text-primary-cyan font-semibold text-lg">High Volatility Momentum</p>
-                                </div>
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                            <div class="relative mb-6">
+                                <img src="agents/Agents/Max Ryder.png" alt="Max Ryder" class="w-full h-48 rounded-lg object-cover">
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
                             </div>
-                            <p class="text-text-secondary mb-6 text-base leading-relaxed">Wallstreetbets graduate specializing in early momentum detection. Masters hype stock conversations and connects community pulse with professional trading.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-primary-cyan/15 text-primary-cyan rounded-full text-sm font-semibold border border-primary-cyan/30 shadow-sm">High Volume</span>
-                                <span class="px-4 py-2 bg-accent-gold/15 text-accent-gold rounded-full text-sm font-semibold border border-accent-gold/30 shadow-sm">Social Sentiment</span>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-bold text-text-primary mb-1">Max Ryder</h3>
+                                <p class="text-primary-cyan font-medium">High Volatility Momentum</p>
+                            </div>
+                            <p class="text-text-secondary mb-4 text-sm leading-relaxed">Wallstreetbets graduate specializing in early momentum detection. Masters hype stock conversations and connects community pulse with professional trading.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">High Volume</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Social Sentiment</span>
                             </div>
                         </div>
 
                         <!-- Ryan Vector Card -->
-                        <div class="bg-gradient-to-br from-dark-surface/80 to-dark-bgSecondary/80 rounded-2xl p-8 border border-primary-cyan/25 hover:border-primary-cyan/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden backdrop-blur-sm shadow-xl hover:shadow-2xl hover:shadow-primary-cyan/20">
-                            <div class="flex items-start gap-6 mb-6">
-                                <div class="relative flex-shrink-0">
-                                    <img src="agents/Agents/Ryan Vector.png" alt="Ryan Vector" class="w-24 h-24 rounded-2xl object-cover shadow-lg">
-                                    <div class="absolute -bottom-2 -right-2 w-6 h-6 bg-gradient-to-r from-green-400 to-primary-cyan rounded-full border-2 border-dark-bg animate-pulse"></div>
-                                </div>
-                                <div>
-                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Ryan Vector</h3>
-                                    <p class="text-primary-cyan font-semibold text-lg">AI & Machine Learning</p>
-                                </div>
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                            <div class="relative mb-6">
+                                <img src="agents/Agents/Ryan Vector.png" alt="Ryan Vector" class="w-full h-48 rounded-lg object-cover">
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
                             </div>
-                            <p class="text-text-secondary mb-6 text-base leading-relaxed">Silicon Valley tech authority with neural-network tattoo. Delivers sharp AI insights without corporate fluff - someone who actually builds and ships AI products.</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-primary-cyan/15 text-primary-cyan rounded-full text-sm font-semibold border border-primary-cyan/30 shadow-sm">LLMs & GPUs</span>
-                                <span class="px-4 py-2 bg-accent-gold/15 text-accent-gold rounded-full text-sm font-semibold border border-accent-gold/30 shadow-sm">AI Infrastructure</span>
+                            <div class="mb-4">
+                                <h3 class="text-xl font-bold text-text-primary mb-1">Ryan Vector</h3>
+                                <p class="text-primary-cyan font-medium">AI & Machine Learning</p>
+                            </div>
+                            <p class="text-text-secondary mb-4 text-sm leading-relaxed">Silicon Valley tech authority with neural-network tattoo. Delivers sharp AI insights without corporate fluff - someone who actually builds and ships AI products.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">LLMs & GPUs</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">AI Infrastructure</span>
                             </div>
                         </div>
 
@@ -487,32 +474,118 @@
             </section>
 
             <!-- Features Grid -->
-            <section id="features" class="py-20 bg-dark-bgSecondary/50">
+            <section id="features" class="py-24 bg-dark-bgSecondary">
                 <div class="section-container">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-6">Platform Features</h2>
+                        <p class="text-xl text-text-secondary max-w-2xl mx-auto">Professional tools for serious traders</p>
+                    </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Crystal-Clear Market Updates</h3>
-                            <p class="text-gray-300">Daily stock news simplified into what actually matters.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Crystal-Clear Market Updates</h3>
+                            <p class="text-text-secondary">Daily stock news simplified into what actually matters.</p>
                         </div>
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Smart Watchlist</h3>
-                            <p class="text-gray-300">Follow only what matters to you—signal, not clutter.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Smart Watchlist</h3>
+                            <p class="text-text-secondary">Follow only what matters to you—signal, not clutter.</p>
                         </div>
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Context-Rich Analysis</h3>
-                            <p class="text-gray-300">Every event framed: the 'so what' in plain language.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Context-Rich Analysis</h3>
+                            <p class="text-text-secondary">Every event framed: the 'so what' in plain language.</p>
                         </div>
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Conversation-Ready Insights</h3>
-                            <p class="text-gray-300">Talk about the market with confidence anywhere.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Conversation-Ready Insights</h3>
+                            <p class="text-text-secondary">Talk about the market with confidence anywhere.</p>
                         </div>
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Beyond the Headlines</h3>
-                            <p class="text-gray-300">Hidden links and implications normal feeds miss.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Beyond the Headlines</h3>
+                            <p class="text-text-secondary">Hidden links and implications normal feeds miss.</p>
                         </div>
-                        <div class="p-6 bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl border border-cyan-500/20">
-                            <h3 class="text-xl font-semibold text-white mb-3">Unique & Flexible Tracking</h3>
-                            <p class="text-gray-300">Broad vision that surfaces unexpected opportunities.</p>
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                            <h3 class="text-xl font-semibold text-text-primary mb-3">Unique & Flexible Tracking</h3>
+                            <p class="text-text-secondary">Broad vision that surfaces unexpected opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Roadmap Section -->
+            <section id="roadmap" class="py-24 bg-gradient-to-br from-dark-bg via-dark-surface to-dark-bgSecondary">
+                <div class="section-container">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-6">Development Roadmap</h2>
+                        <p class="text-xl text-text-secondary max-w-3xl mx-auto">Our journey to revolutionize financial intelligence</p>
+                    </div>
+                    
+                    <div class="max-w-4xl mx-auto">
+                        <div class="space-y-8">
+                            <!-- Phase 1 -->
+                            <div class="bg-dark-surface/60 rounded-xl p-8 border border-accent-gold/30 relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-accent-gold rounded-full flex items-center justify-center">
+                                    <span class="text-dark-bg font-bold text-sm">✓</span>
+                                </div>
+                                <div class="ml-8">
+                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Phase 1: Foundation</h3>
+                                    <p class="text-accent-gold mb-4 font-medium">Q4 2024 - Completed</p>
+                                    <ul class="text-text-secondary space-y-2">
+                                        <li>• Core AI agent development</li>
+                                        <li>• Real-time market data integration</li>
+                                        <li>• Discord community platform launch</li>
+                                        <li>• Initial beta user onboarding</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Phase 2 -->
+                            <div class="bg-dark-surface/60 rounded-xl p-8 border border-primary-cyan/30 relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-primary-cyan rounded-full flex items-center justify-center">
+                                    <span class="text-dark-bg font-bold text-sm">2</span>
+                                </div>
+                                <div class="ml-8">
+                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Phase 2: Enhancement</h3>
+                                    <p class="text-primary-cyan mb-4 font-medium">Q1 2025 - In Progress</p>
+                                    <ul class="text-text-secondary space-y-2">
+                                        <li>• Advanced portfolio tracking</li>
+                                        <li>• Custom watchlist creation</li>
+                                        <li>• Mobile app development</li>
+                                        <li>• Institutional API access</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Phase 3 -->
+                            <div class="bg-dark-surface/60 rounded-xl p-8 border border-text-muted/20 relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-text-muted rounded-full flex items-center justify-center">
+                                    <span class="text-dark-bg font-bold text-sm">3</span>
+                                </div>
+                                <div class="ml-8">
+                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Phase 3: Intelligence</h3>
+                                    <p class="text-text-muted mb-4 font-medium">Q2 2025 - Planned</p>
+                                    <ul class="text-text-secondary space-y-2">
+                                        <li>• Predictive market analytics</li>
+                                        <li>• Risk assessment tools</li>
+                                        <li>• Automated trading signals</li>
+                                        <li>• Advanced sentiment analysis</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Phase 4 -->
+                            <div class="bg-dark-surface/60 rounded-xl p-8 border border-text-muted/20 relative">
+                                <div class="absolute -left-4 top-8 w-8 h-8 bg-text-muted rounded-full flex items-center justify-center">
+                                    <span class="text-dark-bg font-bold text-sm">4</span>
+                                </div>
+                                <div class="ml-8">
+                                    <h3 class="text-2xl font-bold text-text-primary mb-2">Phase 4: Enterprise</h3>
+                                    <p class="text-text-muted mb-4 font-medium">Q3 2025 - Future</p>
+                                    <ul class="text-text-secondary space-y-2">
+                                        <li>• Enterprise dashboard</li>
+                                        <li>• Team collaboration tools</li>
+                                        <li>• White-label solutions</li>
+                                        <li>• Global market expansion</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
