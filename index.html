@@ -10,15 +10,16 @@
             theme: {
                 extend: {
                     colors: {
-                        'dark-bg': '#0a0d14',
-                        'dark-bgSecondary': '#0f1419',
-                        'dark-surface': '#1a1f2e',
-                        'primary-cyan': '#4db6d4',
-                        'primary-blue': '#5b82f6',
-                        'accent-gold': '#d4af37',
-                        'text-primary': '#e2e8f0',
-                        'text-secondary': '#94a3b8',
-                        'text-muted': '#475569'
+                        'dark-bg': '#050a0f',
+                        'dark-bgSecondary': '#0a111a',
+                        'dark-surface': '#0f1922',
+                        'primary-cyan': '#00ffff',
+                        'primary-blue': '#0080ff',
+                        'accent-gold': '#ffff00',
+                        'accent-green': '#00ff80',
+                        'text-primary': '#ffffff',
+                        'text-secondary': '#a0ffff',
+                        'text-muted': '#6080a0'
                     }
                 }
             }
@@ -26,7 +27,7 @@
     </script>
     <style>
         .gradient-text {
-            background: linear-gradient(to right, #22d3ee, #3b82f6);
+            background: linear-gradient(to right, #00ffff, #0080ff);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -73,19 +74,20 @@
             background: transparent;
         }
         .sidebar-container::-webkit-scrollbar-thumb {
-            background: #22d3ee;
+            background: #00ffff;
             border-radius: 4px;
         }
         
         .insight-card {
             animation: slideInRight 0.6s ease-out;
+            opacity: 0;
+            transform: translateX(100%);
         }
         
-        .insight-card:nth-child(2) { animation-delay: 0.1s; }
-        .insight-card:nth-child(3) { animation-delay: 0.2s; }
-        .insight-card:nth-child(4) { animation-delay: 0.3s; }
-        .insight-card:nth-child(5) { animation-delay: 0.4s; }
-        .insight-card:nth-child(6) { animation-delay: 0.5s; }
+        .insight-card.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
         
         @keyframes slideInRight {
             from {
@@ -110,7 +112,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(0,255,255,0.2), transparent);
             animation: shine 2s infinite;
         }
         
@@ -125,11 +127,22 @@
         
         @keyframes pulseGlow {
             0%, 100% {
-                box-shadow: 0 0 5px rgba(34, 211, 238, 0.3);
+                box-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
             }
             50% {
-                box-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 30px rgba(34, 211, 238, 0.3);
+                box-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 30px rgba(0, 255, 255, 0.5);
             }
+        }
+
+        .live-message {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease-out;
+        }
+        
+        .live-message.show {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -234,8 +247,8 @@
                         <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
                             <div class="flex items-center group">
                                 <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-primary-cyan via-primary-blue to-accent-gold rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-primary-cyan/30 group-hover:scale-110 transition-all duration-300">
-                                        <span class="text-text-primary font-bold text-2xl">C</span>
+                                    <div class="w-20 h-20 bg-gradient-to-br from-primary-cyan via-primary-blue to-accent-gold rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-primary-cyan/50 group-hover:scale-110 transition-all duration-300">
+                                        <span class="text-dark-bg font-bold text-2xl">C</span>
                                     </div>
                                     <span class="text-3xl font-bold gradient-text">Clarity</span>
                                 </div>
@@ -243,8 +256,8 @@
                             </div>
                             <div class="flex items-center group">
                                 <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-primary-blue via-accent-gold to-primary-cyan rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-primary-blue/30 group-hover:scale-110 transition-all duration-300">
-                                        <span class="text-text-primary font-bold text-2xl">C</span>
+                                    <div class="w-20 h-20 bg-gradient-to-br from-primary-blue via-accent-gold to-primary-cyan rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-primary-blue/50 group-hover:scale-110 transition-all duration-300">
+                                        <span class="text-dark-bg font-bold text-2xl">C</span>
                                     </div>
                                     <span class="text-3xl font-bold gradient-text">Context</span>
                                 </div>
@@ -252,8 +265,8 @@
                             </div>
                             <div class="flex items-center group">
                                 <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-accent-gold via-primary-cyan to-primary-blue rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-accent-gold/30 group-hover:scale-110 transition-all duration-300">
-                                        <span class="text-text-primary font-bold text-2xl">C</span>
+                                    <div class="w-20 h-20 bg-gradient-to-br from-accent-gold via-primary-cyan to-primary-blue rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-accent-gold/50 group-hover:scale-110 transition-all duration-300">
+                                        <span class="text-dark-bg font-bold text-2xl">C</span>
                                     </div>
                                     <span class="text-3xl font-bold gradient-text">Confidence</span>
                                 </div>
@@ -284,10 +297,10 @@
                     
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                         <!-- Sophie Morgan Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Sophie Morgan</h3>
@@ -295,16 +308,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Confident trend-spotter with sharp market timing expertise. Known for breaking down complex ideas into clear insights and spotting hot momentum breakouts.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">FAANG Expert</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Breakout Detection</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">FAANG Expert</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Breakout Detection</span>
                             </div>
                         </div>
 
                         <!-- Raj Patel Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Raj Patel.png" alt="Raj Patel" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Raj Patel</h3>
@@ -312,16 +325,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">PhD in Molecular Biology from Stanford, 10+ years at leading biotech firms. Passionate about AI transforming healthcare with scientifically rigorous analysis.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">FDA Approvals</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Clinical Trials</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">FDA Approvals</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Clinical Trials</span>
                             </div>
                         </div>
 
                         <!-- Nova Qubit Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Nova Qubit.png" alt="Nova Qubit" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Nova Qubit</h3>
@@ -329,16 +342,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Tech-forward quantum expert who makes complex quantum concepts accessible to investors. Spots emerging trends early in the quantum revolution.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Quantum Tech</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Future Tech</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">Quantum Tech</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Future Tech</span>
                             </div>
                         </div>
 
                         <!-- Max Ryder Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Max Ryder.png" alt="Max Ryder" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Max Ryder</h3>
@@ -346,16 +359,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Wallstreetbets graduate specializing in early momentum detection. Masters hype stock conversations and connects community pulse with professional trading.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">High Volume</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Social Sentiment</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">High Volume</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Social Sentiment</span>
                             </div>
                         </div>
 
                         <!-- Ryan Vector Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Ryan Vector.png" alt="Ryan Vector" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Ryan Vector</h3>
@@ -363,16 +376,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Silicon Valley tech authority with neural-network tattoo. Delivers sharp AI insights without corporate fluff - someone who actually builds and ships AI products.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">LLMs & GPUs</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">AI Infrastructure</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">LLMs & GPUs</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">AI Infrastructure</span>
                             </div>
                         </div>
 
                         <!-- Leo Chen Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Leo Chen.png" alt="Leo Chen" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Leo Chen</h3>
@@ -380,16 +393,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">26-year-old crypto native from Singapore. Self-taught coder who launched NFT projects and co-founded a DeFi startup. Speaks in degens' language with alpha-level insights.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">DeFi Protocols</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">TVL Analysis</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">DeFi Protocols</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">TVL Analysis</span>
                             </div>
                         </div>
 
                         <!-- Jack Miller Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Jack Miller.png" alt="Jack Miller" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Jack Miller</h3>
@@ -397,16 +410,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Texas-born political reporter covering policy impacts on markets. Street-smart insider who speaks the language of the heartland and understands political market catalysts.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Policy Impact</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Sector Rotation</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">Policy Impact</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Sector Rotation</span>
                             </div>
                         </div>
 
                         <!-- Eliot Grant Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Eliot Grant.png" alt="Eliot Grant" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Eliot Grant</h3>
@@ -414,16 +427,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">CFA with 20+ years trading through cycles. Market veteran who understands sector rotations, macro headwinds, and translates complex movements into actionable insights.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Macro Analysis</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Cycle Timing</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">Macro Analysis</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Cycle Timing</span>
                             </div>
                         </div>
 
                         <!-- Amir Shalev Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Amir Shalev.png" alt="Amir Shalev" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Amir Shalev</h3>
@@ -431,16 +444,16 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Tech-driven economist from Tel Aviv University. Specializes in Israeli tech IPOs and dual-listed companies, connecting Israeli innovation with Wall Street.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Israeli Tech</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Dual Listings</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">Israeli Tech</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Dual Listings</span>
                             </div>
                         </div>
 
                         <!-- Tex Johnson Card -->
-                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
+                        <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
                                 <img src="agents/Agents/Tex Johnson.png" alt="Tex Johnson" class="w-full h-48 rounded-lg object-cover">
-                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-green-400 rounded-full border-2 border-dark-bg"></div>
+                                <div class="absolute bottom-3 right-3 w-4 h-4 bg-accent-green rounded-full border-2 border-dark-bg"></div>
                             </div>
                             <div class="mb-4">
                                 <h3 class="text-xl font-bold text-text-primary mb-1">Tex Johnson</h3>
@@ -448,15 +461,15 @@
                             </div>
                             <p class="text-text-secondary mb-4 text-sm leading-relaxed">Oil & gas veteran from Houston with decades of energy sector experience. Tracks crude prices, pipeline flows, and commodity cycles with boots-on-the-ground expertise.</p>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium">Energy Sector</span>
-                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium">Commodity Cycles</span>
+                                <span class="px-3 py-1 bg-primary-cyan/20 text-primary-cyan rounded-full text-xs font-medium border border-primary-cyan/30">Energy Sector</span>
+                                <span class="px-3 py-1 bg-accent-gold/20 text-accent-gold rounded-full text-xs font-medium border border-accent-gold/30">Commodity Cycles</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Show Live Market Stream Button -->
                     <div class="text-center mt-12">
-                        <button id="showStreamBtn" class="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-200 hover:scale-105 shadow-lg">
+                        <button id="showStreamBtn" class="bg-gradient-to-r from-primary-cyan to-primary-blue hover:from-primary-cyan/80 hover:to-primary-blue/80 text-dark-bg font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-200 hover:scale-105 shadow-lg shadow-primary-cyan/30">
                             Show Live Market Stream
                         </button>
                     </div>
@@ -471,27 +484,27 @@
                         <p class="text-xl text-text-secondary max-w-2xl mx-auto">Professional tools for serious traders</p>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Crystal-Clear Market Updates</h3>
                             <p class="text-text-secondary">Daily stock news simplified into what actually matters.</p>
                         </div>
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Smart Watchlist</h3>
                             <p class="text-text-secondary">Follow only what matters to you—signal, not clutter.</p>
                         </div>
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Context-Rich Analysis</h3>
                             <p class="text-text-secondary">Every event framed: the 'so what' in plain language.</p>
                         </div>
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Conversation-Ready Insights</h3>
                             <p class="text-text-secondary">Talk about the market with confidence anywhere.</p>
                         </div>
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Beyond the Headlines</h3>
                             <p class="text-text-secondary">Hidden links and implications normal feeds miss.</p>
                         </div>
-                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20">
+                        <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Unique & Flexible Tracking</h3>
                             <p class="text-text-secondary">Broad vision that surfaces unexpected opportunities.</p>
                         </div>
@@ -502,7 +515,7 @@
 
 
             <!-- Footer -->
-            <footer class="bg-dark-bg border-t border-gray-800">
+            <footer class="bg-dark-bg border-t border-primary-cyan/20">
                 <div class="section-container py-12">
                     <div class="max-w-6xl mx-auto">
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -512,7 +525,7 @@
                                     <img src="stocklight-logo.png" alt="StockLight Logo" class="w-10 h-10 object-contain">
                                     <span class="text-2xl font-bold gradient-text">StockLight</span>
                                 </div>
-                                <p class="text-gray-400 max-w-md leading-relaxed">
+                                <p class="text-text-secondary max-w-md leading-relaxed">
                                     Your secret edge in the markets. Transforming chaotic market noise into clear, conversation‑ready insight.
                                 </p>
                             </div>
@@ -522,17 +535,17 @@
                                 <h3 class="text-white font-semibold mb-4">Community</h3>
                                 <ul class="space-y-2">
                                     <li>
-                                        <a href="https://x.com/StockLight_io" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="https://x.com/StockLight_io" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             X
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://discord.com/invite/mpTXWNWJ" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="https://discord.com/invite/mpTXWNWJ" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             Discord
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/stocklight.io" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="https://www.instagram.com/stocklight.io" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             Instagram
                                         </a>
                                     </li>
@@ -544,17 +557,17 @@
                                 <h3 class="text-white font-semibold mb-4">Legal</h3>
                                 <ul class="space-y-2">
                                     <li>
-                                        <a href="/content/privacy.md" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="/content/privacy.md" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             Privacy Policy
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="/content/disclaimer.md" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="/content/disclaimer.md" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             Disclaimer
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="mailto:contact@stocklight.com" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+                                        <a href="mailto:contact@stocklight.com" class="text-text-secondary hover:text-primary-cyan transition-colors text-sm">
                                             Contact Us
                                         </a>
                                     </li>
@@ -562,8 +575,8 @@
                             </div>
                         </div>
 
-                        <div class="border-t border-gray-800 pt-8 text-center">
-                            <p class="text-gray-400">&copy; 2025 StockLight. All rights reserved.</p>
+                        <div class="border-t border-primary-cyan/20 pt-8 text-center">
+                            <p class="text-text-secondary">&copy; 2025 StockLight. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -571,181 +584,317 @@
         </main>
 
         <!-- Live Market Insights Sidebar -->
-        <aside class="fixed top-16 right-0 w-96 h-full bg-dark-bgSecondary/95 backdrop-blur-lg border-l border-text-muted/20 hidden lg:block">
+        <aside class="fixed top-16 right-0 w-96 h-full bg-dark-bgSecondary/95 backdrop-blur-lg border-l border-primary-cyan/20 hidden lg:block">
             <div class="sidebar-container p-6">
-                <div class="flex items-center justify-between mb-6 pb-4 border-b border-text-muted/20">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-primary-cyan/20">
                     <h3 class="text-text-primary font-bold text-xl">Live Market Insights</h3>
-                    <div class="flex items-center gap-2 bg-emerald-500/15 px-3 py-1.5 rounded-lg border border-emerald-500/25">
-                        <div class="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
-                        <span class="text-emerald-400 text-sm font-semibold">LIVE</span>
+                    <div class="flex items-center gap-2 bg-accent-green/15 px-3 py-1.5 rounded-lg border border-accent-green/25">
+                        <div class="w-2.5 h-2.5 bg-accent-green rounded-full animate-pulse"></div>
+                        <span class="text-accent-green text-sm font-semibold">LIVE</span>
                     </div>
                 </div>
 
-                <!-- Insight Cards -->
-                <div class="space-y-4">
-                    <!-- Nova Qubit Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Nova Qubit.png" alt="Nova Qubit" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Nova Qubit</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">HCA</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            HCA reported Q2 profit of $1.65 billion, $0.83 EPS, beating estimates...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-slate-600/25 text-slate-300 px-3 py-1 rounded-md text-xs font-semibold border border-slate-500/30">GENERAL</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
-
-                    <!-- Sophie Morgan Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Sophie Morgan</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">UNP</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            UNP reported Q2 net income of $1.88 billion, or $3.15 per share; adjust...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-emerald-600/25 text-emerald-300 px-3 py-1 rounded-md text-xs font-semibold border border-emerald-500/30">VERY POSITIVE</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
-
-                    <!-- Max Ryder Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Max Ryder.png" alt="Max Ryder" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Max Ryder</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">CMG</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            CMG shares plunged 13.3% after Q2 2025 revenues of $3.08B missed the $...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-red-600/25 text-red-300 px-3 py-1 rounded-md text-xs font-semibold border border-red-500/30">NEGATIVE</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
-
-                    <!-- Max Ryder UNH Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Max Ryder.png" alt="Max Ryder" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Max Ryder</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">UNH</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            UNH shares fell nearly 5% to $278.58 amid a DOJ investigation into its...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-red-700/25 text-red-200 px-3 py-1 rounded-md text-xs font-semibold border border-red-600/30">VERY NEGATIVE</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
-
-                    <!-- Sophie Morgan UUUU Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Sophie Morgan</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">UUUU</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            UUUU surged 18.56% from July 15-22, 2025, boosted by the DOE's Fuel Li...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-emerald-600/25 text-emerald-300 px-3 py-1 rounded-md text-xs font-semibold border border-emerald-500/30">VERY POSITIVE</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
-
-                    <!-- Sophie Morgan LNP Insight -->
-                    <div class="insight-card bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-text-muted/40 transition-all duration-300">
-                        <div class="flex items-center gap-3 mb-3">
-                            <div class="relative">
-                                <img src="agents/Agents/Sophie Morgan.png" alt="Sophie Morgan" class="w-8 h-8 rounded-full">
-                                <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-gold rounded-full border border-dark-bg"></div>
-                            </div>
-                            <div class="flex-1">
-                                <h4 class="text-text-primary text-sm font-semibold">Sophie Morgan</h4>
-                                <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium">LNP</span>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-text-muted text-xs">2d</span>
-                            </div>
-                        </div>
-                        <p class="text-text-secondary text-sm mb-3 leading-relaxed">
-                            LNP reported core operating income up 5% and earnings from core operations...
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <span class="bg-emerald-600/25 text-emerald-300 px-3 py-1 rounded-md text-xs font-semibold border border-emerald-500/30">VERY POSITIVE</span>
-                            <span class="text-text-muted text-xs">Impact: 9/10</span>
-                        </div>
-                    </div>
+                <!-- Insight Cards Container -->
+                <div id="insightCardsContainer" class="space-y-4">
+                    <!-- Messages will be dynamically added here -->
                 </div>
 
                 <!-- Live Stream Status -->
                 <div class="mt-8 text-center">
-                    <div class="inline-flex items-center gap-3 text-cyan-300 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 px-4 py-3 rounded-full border border-cyan-400/30 shine-effect">
+                    <div class="inline-flex items-center gap-3 text-primary-cyan bg-gradient-to-r from-primary-cyan/20 to-primary-blue/20 px-4 py-3 rounded-full border border-primary-cyan/30 shine-effect">
                         <div class="flex items-center gap-2">
-                            <div class="w-2 h-2 bg-gradient-to-r from-green-400 to-cyan-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
+                            <div class="w-2 h-2 bg-gradient-to-r from-accent-green to-primary-cyan rounded-full animate-pulse shadow-lg shadow-primary-cyan/50"></div>
                             <span class="text-sm font-semibold">Live Stream Active</span>
                         </div>
-                        <svg class="w-4 h-4 text-cyan-400 animate-bounce" fill="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-4 h-4 text-primary-cyan animate-bounce" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M7.41 8.84L12 13.42l4.59-4.58L18 10.25l-6 6-6-6z"/>
                         </svg>
                     </div>
-                    <p class="text-xs text-gray-400 mt-2">Real-time market insights updating...</p>
+                    <p class="text-xs text-text-muted mt-2">Real-time market insights updating...</p>
                 </div>
             </div>
         </aside>
     </div>
 
     <script>
+        // Live market messages data
+        const liveMessages = [
+            {
+                agent: 'Sophie Morgan',
+                ticker: 'NVDA',
+                message: 'NVDA breaking resistance at $145. AI chip demand surge continues post Q4 earnings. Volume spike suggests institutional accumulation.',
+                sentiment: 'VERY POSITIVE',
+                impact: '10/10',
+                time: 'now'
+            },
+            {
+                agent: 'Max Ryder',
+                ticker: 'TSLA',
+                message: 'TSLA momentum building above $250. Reddit sentiment turning bullish on FSD progress. Watch for breakout above $255.',
+                sentiment: 'POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Ryan Vector',
+                ticker: 'GOOGL',
+                message: 'GOOGL unveils Gemini 2.0 with breakthrough multimodal capabilities. Search + AI integration accelerating revenue synergies.',
+                sentiment: 'VERY POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Leo Chen',
+                ticker: 'BTC',
+                message: 'Bitcoin testing $97K resistance. ETF inflows accelerating, MicroStrategy adds 5,262 BTC. Institutional FOMO intensifying.',
+                sentiment: 'VERY POSITIVE',
+                impact: '10/10',
+                time: 'now'
+            },
+            {
+                agent: 'Raj Patel',
+                ticker: 'MRNA',
+                message: 'MRNA announces breakthrough cancer vaccine trial results. 89% efficacy in Phase II. FDA fast-track designation likely.',
+                sentiment: 'VERY POSITIVE',
+                impact: '10/10',
+                time: 'now'
+            },
+            {
+                agent: 'Nova Qubit',
+                ticker: 'IBM',
+                message: 'IBM quantum breakthrough: 1000-qubit processor achieves quantum advantage. Partnership with Microsoft announced.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Tex Johnson',
+                ticker: 'XOM',
+                message: 'XOM crude oil discovery in Guyana exceeds estimates. 2B barrels confirmed. Production starts Q3 2025.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Jack Miller',
+                ticker: 'LMT',
+                message: 'LMT secures $15B defense contract. Political tensions driving military spending surge. Bipartisan support confirmed.',
+                sentiment: 'POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Eliot Grant',
+                ticker: 'SPY',
+                message: 'SPY testing all-time highs. Fed dovish signals boosting risk appetite. Market breadth improving across sectors.',
+                sentiment: 'POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Amir Shalev',
+                ticker: 'WDAY',
+                message: 'WDAY Israeli R&D expansion accelerating AI development. Dual-listed arbitrage opportunity emerging.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Sophie Morgan',
+                ticker: 'AMZN',
+                message: 'AMZN AWS revenue beats estimates by 12%. Cloud growth accelerating with AI services. Prime membership hits 200M.',
+                sentiment: 'VERY POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Max Ryder',
+                ticker: 'AMC',
+                message: 'AMC short interest drops to 15%. Retail investors coordinating another squeeze attempt. Options activity spiking.',
+                sentiment: 'POSITIVE',
+                impact: '7/10',
+                time: 'now'
+            },
+            {
+                agent: 'Ryan Vector',
+                ticker: 'META',
+                message: 'META Reality Labs revenue up 33% QoQ. Quest 3 sales exceeding expectations. Metaverse adoption inflecting.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Leo Chen',
+                ticker: 'COIN',
+                message: 'COIN Q4 trading volume up 180% YoY. Crypto regulation clarity driving institutional adoption. Revenue guidance raised.',
+                sentiment: 'VERY POSITIVE',
+                impact: '9/10',
+                time: 'now'
+            },
+            {
+                agent: 'Raj Patel',
+                ticker: 'PFE',
+                message: 'PFE obesity drug trial shows 23% weight loss. Competing with Ozempic, potential $50B market. Stock undervalued.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Nova Qubit',
+                ticker: 'QCOM',
+                message: 'QCOM quantum-encrypted 6G chips enter production. Samsung partnership confirmed. China restrictions lifted.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Tex Johnson',
+                ticker: 'CVX',
+                message: 'CVX carbon capture facility operational. Government subsidies secured. ESG rating upgraded to A+.',
+                sentiment: 'POSITIVE',
+                impact: '7/10',
+                time: 'now'
+            },
+            {
+                agent: 'Jack Miller',
+                ticker: 'BA',
+                message: 'BA MAX 10 certification accelerated. Political pressure resolving safety concerns. Orders backlog growing.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Eliot Grant',
+                ticker: 'QQQ',
+                message: 'QQQ momentum remains strong despite overbought conditions. Tech rotation favoring AI leaders. Pullback opportunity near.',
+                sentiment: 'GENERAL',
+                impact: '8/10',
+                time: 'now'
+            },
+            {
+                agent: 'Amir Shalev',
+                ticker: 'CYBR',
+                message: 'CYBR Israeli cybersecurity exports surge 45%. Government contracts secured across EU and US. Dual-listing benefits.',
+                sentiment: 'POSITIVE',
+                impact: '8/10',
+                time: 'now'
+            }
+        ];
+
+        let currentMessageIndex = 0;
+        let streamInterval;
+
+        // Agent images mapping
+        const agentImages = {
+            'Sophie Morgan': 'agents/Agents/Sophie Morgan.png',
+            'Max Ryder': 'agents/Agents/Max Ryder.png',
+            'Ryan Vector': 'agents/Agents/Ryan Vector.png',
+            'Leo Chen': 'agents/Agents/Leo Chen.png',
+            'Raj Patel': 'agents/Agents/Raj Patel.png',
+            'Nova Qubit': 'agents/Agents/Nova Qubit.png',
+            'Tex Johnson': 'agents/Agents/Tex Johnson.png',
+            'Jack Miller': 'agents/Agents/Jack Miller.png',
+            'Eliot Grant': 'agents/Agents/Eliot Grant.png',
+            'Amir Shalev': 'agents/Agents/Amir Shalev.png'
+        };
+
+        // Sentiment color mapping
+        const sentimentColors = {
+            'VERY POSITIVE': { bg: 'bg-accent-green/25', text: 'text-accent-green', border: 'border-accent-green/30' },
+            'POSITIVE': { bg: 'bg-emerald-600/25', text: 'text-emerald-300', border: 'border-emerald-500/30' },
+            'GENERAL': { bg: 'bg-slate-600/25', text: 'text-slate-300', border: 'border-slate-500/30' },
+            'NEGATIVE': { bg: 'bg-red-600/25', text: 'text-red-300', border: 'border-red-500/30' },
+            'VERY NEGATIVE': { bg: 'bg-red-700/25', text: 'text-red-200', border: 'border-red-600/30' }
+        };
+
+        function createInsightCard(message, index) {
+            const colors = sentimentColors[message.sentiment];
+            const timeOptions = ['now', '30s', '1m', '2m', '3m', '5m'];
+            const randomTime = timeOptions[Math.floor(Math.random() * timeOptions.length)];
+            
+            return `
+                <div class="live-message bg-dark-surface/60 rounded-lg p-4 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="relative">
+                            <img src="${agentImages[message.agent]}" alt="${message.agent}" class="w-8 h-8 rounded-full">
+                            <div class="absolute -bottom-1 -right-1 w-3 h-3 bg-accent-green rounded-full border border-dark-bg"></div>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="text-text-primary text-sm font-semibold">${message.agent}</h4>
+                            <span class="bg-primary-cyan/20 text-primary-cyan px-2 py-0.5 rounded text-xs font-medium border border-primary-cyan/30">${message.ticker}</span>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-text-muted text-xs">${randomTime}</span>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm mb-3 leading-relaxed">
+                        ${message.message}
+                    </p>
+                    <div class="flex items-center justify-between">
+                        <span class="${colors.bg} ${colors.text} px-3 py-1 rounded-md text-xs font-semibold border ${colors.border}">${message.sentiment}</span>
+                        <span class="text-text-muted text-xs">Impact: ${message.impact}</span>
+                    </div>
+                </div>
+            `;
+        }
+
+        function addMessage() {
+            if (currentMessageIndex >= liveMessages.length) {
+                // Reset to start for continuous loop
+                currentMessageIndex = 0;
+                // Clear existing messages after a full cycle
+                setTimeout(() => {
+                    const container = document.getElementById('insightCardsContainer');
+                    container.innerHTML = '';
+                    currentMessageIndex = 0;
+                    startLiveStream();
+                }, 2000);
+                return;
+            }
+
+            const container = document.getElementById('insightCardsContainer');
+            const message = liveMessages[currentMessageIndex];
+            
+            // Create new message element
+            const messageElement = document.createElement('div');
+            messageElement.innerHTML = createInsightCard(message, currentMessageIndex);
+            
+            // Insert at the top
+            container.insertBefore(messageElement.firstElementChild, container.firstChild);
+            
+            // Trigger animation
+            setTimeout(() => {
+                const newMessage = container.firstElementChild;
+                newMessage.classList.add('show');
+            }, 100);
+
+            // Remove old messages if too many
+            const messages = container.children;
+            if (messages.length > 8) {
+                for (let i = messages.length - 1; i >= 8; i--) {
+                    messages[i].style.opacity = '0';
+                    messages[i].style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        if (messages[i] && messages[i].parentNode) {
+                            messages[i].remove();
+                        }
+                    }, 300);
+                }
+            }
+
+            currentMessageIndex++;
+        }
+
+        function startLiveStream() {
+            // Add first message immediately
+            addMessage();
+            
+            // Continue adding messages every 2-3 seconds
+            streamInterval = setInterval(() => {
+                addMessage();
+            }, Math.random() * 1000 + 2000); // Random between 2-3 seconds
+        }
+
         // Show Live Market Stream button functionality
         document.getElementById('showStreamBtn').addEventListener('click', function() {
             const sidebar = document.querySelector('aside');
@@ -757,7 +906,7 @@
             } else {
                 // On desktop, highlight the sidebar
                 sidebar.classList.add('animate-pulse');
-                sidebar.style.boxShadow = '0 0 30px rgba(34, 211, 238, 0.5)';
+                sidebar.style.boxShadow = '0 0 30px rgba(0, 255, 255, 0.5)';
                 
                 setTimeout(() => {
                     sidebar.classList.remove('animate-pulse');
@@ -766,13 +915,18 @@
             }
             
             // Button feedback
-            btn.textContent = 'Showing Live Stream ✓';
-            btn.className = btn.className.replace('from-cyan-500 to-blue-500', 'from-green-500 to-green-600');
+            btn.textContent = 'Live Stream Active ✓';
+            btn.className = btn.className.replace('from-primary-cyan to-primary-blue', 'from-accent-green to-emerald-600');
             
             setTimeout(() => {
                 btn.textContent = 'Show Live Market Stream';
-                btn.className = btn.className.replace('from-green-500 to-green-600', 'from-cyan-500 to-blue-500');
+                btn.className = btn.className.replace('from-accent-green to-emerald-600', 'from-primary-cyan to-primary-blue');
             }, 2000);
+        });
+
+        // Start the live stream when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(startLiveStream, 1000); // Start after 1 second
         });
 
         // Smooth scrolling for navigation links
@@ -790,25 +944,11 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.background = 'rgba(15, 20, 25, 0.98)';
+                header.style.background = 'rgba(10, 17, 26, 0.98)';
             } else {
-                header.style.background = 'rgba(15, 20, 25, 0.95)';
+                header.style.background = 'rgba(10, 17, 26, 0.95)';
             }
         });
-
-        // Simulate real-time updates for insight times
-        function updateInsightTimes() {
-            const timeElements = document.querySelectorAll('aside .text-gray-500.text-xs');
-            timeElements.forEach((element, index) => {
-                const times = ['2d', '3d', '4d', '1w', '2w'];
-                if (element.textContent.includes('d') || element.textContent.includes('w')) {
-                    element.textContent = times[index % times.length];
-                }
-            });
-        }
-
-        // Update times every 30 seconds
-        setInterval(updateInsightTimes, 30000);
     </script>
 </body>
 </html> 
