@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StockLight - תכנית המייסדים | היתרון הסודי שלך בשוק ההון</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #0a0e14;
+            --blue-gradient: linear-gradient(135deg, #0a1629 0%, #162c45 100%);
+            --teal: #00e6c3;
+            --yellow: #f7e01d;
+            --card-bg: rgba(12, 24, 39, 0.7);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-blue);
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            background-color: rgba(10, 14, 20, 0.95);
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .logo:hover {
+            color: var(--teal);
+        }
+        
+        .nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .nav-btn {
+            padding: 0.6rem 1.2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+        
+        .nav-btn:hover {
+            transform: translateY(-3px);
+        }
+        
+        .btn-buy {
+            background-color: var(--yellow);
+            color: black;
+        }
+        
+        .btn-discord {
+            background-color: #5865F2;
+            color: white;
+        }
+        
+        .btn-eng {
+            background-color: white;
+            color: black;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .hero {
+            background: var(--blue-gradient);
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--teal);
+            margin-bottom: 2rem;
+        }
+        
+        .hero-cta {
+            background-color: var(--yellow);
+            color: black;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .benefits {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .benefits h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--teal);
+        }
+        
+        .benefits-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .benefit-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(0, 230, 195, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+        
+        .benefit-icon i {
+            font-size: 1.8rem;
+            color: var(--teal);
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+        
+        .benefit-card p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .package-section {
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .package-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            max-width: 380px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 230, 195, 0.2);
+        }
+        
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0.8rem 0;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        .limited-offer {
+            background-color: rgba(247, 224, 29, 0.1);
+            color: var(--yellow);
+            padding: 0.4rem 0.8rem;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        
+        .social-follow {
+            background-color: rgba(12, 24, 39, 0.5);
+            padding: 2rem 0;
+            margin-top: 3rem;
+            text-align: center;
+        }
+        
+        .social-follow h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--teal);
+        }
+        
+        .social-follow p {
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.8rem;
+            background-color: rgba(0, 230, 195, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            background-color: var(--teal);
+            color: var(--dark-blue);
+        }
+        
+        .meet-agents {
+            background-color: rgba(247, 224, 29, 0.05);
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .meet-agents h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--yellow);
+        }
+        
+        .meet-agents p {
+            margin-bottom: 1.5rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .agents-btn {
+            background-color: rgba(247, 224, 29, 0.2);
+            color: var(--yellow);
+            padding: 0.7rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        
+        .agents-btn:hover {
+            transform: translateY(-3px);
+            background-color: rgba(247, 224, 29, 0.3);
+        }
+        
+        .advantages {
+            background: var(--blue-gradient);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .advantages h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--teal);
+        }
+        
+        .advantages-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .advantage-item {
+            background: rgba(22, 44, 69, 0.7);
+            border-radius: 10px;
+            padding: 1.2rem;
+            width: 240px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .advantage-item h3 {
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+        
+        .advantage-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .footer {
+            padding: 2rem 5%;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .founder-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            margin: 1.3rem 0;
+            text-align: right;
+            font-size: 0.9rem;
+        }
+        
+        .founder-benefit {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        
+        .check-icon {
+            color: var(--teal);
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .check-icon.highlight {
+            background-color: rgba(0, 230, 195, 0.1);
+        }
+        
+        .package-card h2 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+        
+        .package-card p {
+            font-size: 0.9rem;
+            margin: 0.3rem 0 0.8rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-link {
+            color: var(--teal);
+            font-size: 1.4rem;
+            transition: transform 0.2s, color 0.2s;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px);
+            color: var(--yellow);
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="https://stocklight.io" class="logo">StockLight</a>
+        <nav class="nav">
+            <a href="https://www.patreon.com/stocklight/membership" class="nav-btn btn-buy">הצטרפו עכשיו!</a>
+            <a href="https://discord.gg/sfuKUqzG4r" class="nav-btn btn-discord">Join Discord (Free!)</a>
+            <a href="https://www.stocklight.io" class="nav-btn btn-eng">Eng</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>StockLight</h1>
+            <p>היתרון הסודי שלך בשוק ההון</p>
+        </div>
+    </section>
+
+    <section class="benefits">
+        <div class="container">
+            <h2>מה מקבלים?</h2>
+            
+            <div class="benefits-container">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>עדכוני לייב בעברית</h3>
+                    <p>על המתרחש בוולסטריט, בדיוק בזמן</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>9 סוכני AI</h3>
+                    <p>שחושפים את הסודות מאחורי הכותרות</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>סיכומי שוק</h3>
+                    <p>יומיים ושבועיים שמחברים את הנקודות</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-list-ul"></i>
+                    </div>
+                    <h3>רשימת מעקב</h3>
+                    <p>מותאמת למניות שמעניינות אותך</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>קהילת דיסקורד</h3>
+                    <p>התחבר למשקיעים חכמים</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="package-section">
+        <div class="container">
+            <div class="package-card">
+                <div class="limited-offer">מוגבל! רק לקבוצת המייסדים</div>
+                <h2>הצטרף לתכנית Beta Founders</h2>
+                
+                <div class="price">
+                    $6.99 <span>/ לחודש</span>
+                </div>
+                
+                <div class="founder-benefits">
+                    <div class="founder-benefit">
+                        <span class="check-icon"><i class="fas fa-check" style="font-size: 0.7rem;"></i></span>
+                        <div>מצטרפים היום, משלמים מחיר מייסדים לתמיד</div>
+                    </div>
+                    
+                    <div class="founder-benefit">
+                        <span class="check-icon"><i class="fas fa-check" style="font-size: 0.7rem;"></i></span>
+                        <div>קו ישיר למנהלי פיתוח המוצר</div>
+                    </div>
+                    
+                    <div class="founder-benefit">
+                        <span class="check-icon"><i class="fas fa-check" style="font-size: 0.7rem;"></i></span>
+                        <div>אנחנו מקבלים רק קבוצה קטנה של מייסדים</div>
+                    </div>
+                    
+                    <div class="founder-benefit">
+                        <span class="check-icon highlight"><i class="fas fa-check" style="font-size: 0.7rem;"></i></span>
+                        <div>שבוע ניסיון חינם, בלי התחייבות</div>
+                    </div>
+                </div>
+                
+                <a href="https://www.patreon.com/checkout/stocklight?rid=25366198" class="hero-cta">הצטרף עכשיו</a>
+                
+                <p style="margin-top: 1.2rem; font-size: 0.8rem; opacity: 0.7;">המידע הוא למטרות אינפורמטיביות בלבד ואינו מהווה ייעוץ השקעות.</p>
+            </div>
+        </div>
+        
+        <div class="meet-agents">
+            <div class="container">
+                <h3>רוצים להכיר את הסוכנים שלנו?</h3>
+                <p>בואו לגלות את 9 סוכני ה-AI המתקדמים שיעזרו לכם לפענח את שוק ההון. כל סוכן מתמחה בתחום שונה ויחד הם מספקים לכם תמונה מלאה על המתרחש בשוק.</p>
+                <a href="https://stocklight.io/agents" class="agents-btn">לחצו להכרת הסוכנים</a>
+            </div>
+        </div>
+        
+        <div class="social-follow">
+            <div class="container">
+                <h3>רוצים להישאר מעודכנים?</h3>
+                <p>עקבו אחרינו ברשתות החברתיות לתוכן נוסף, עדכונים והתראות על הזדמנויות נסתרות נוספות</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/stocklight.io/" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61578171257156" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://x.com/StockLight_io" target="_blank" class="social-icon">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/stocklight-io" target="_blank" class="social-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.patreon.com/stocklight" target="_blank" class="social-icon">
+                        <i class="fab fa-patreon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="advantages">
+        <div class="container">
+            <h2>למה StockLight?</h2>
+            
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <h3>חוסך שעות</h3>
+                    <p>של התעסקות וקריאה בפלטפורמות השונות</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h3>תדע מדוע אתה משקיע</h3>
+                    <p>ותדע להסביר את ההחלטות שלך לאחרים</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h3>תזהה הזדמנויות השקעה</h3>
+                    <p>ותיחשף לאופקים חדשים</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h3>תבין לעומק בלי להתאמץ</h3>
+                    <p>כמו שיש לך חבר שמסביר לך הכל</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h3>תרגיש את סנטימנט השוק</h3>
+                    <p>ותבחין בין פאניקה זמנית למגמה אמיתית</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <h3>תבין מי מרוויח מהחלטות</h3>
+                    <p>וכיצד הן משפיעות על ההשקעות שלך</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2.5rem;">
+                <a href="https://www.patreon.com/checkout/stocklight?rid=25366198" class="hero-cta">הצטרף ל Beta Founders</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="copyright">
+            ©️ 2025 StockLight | <a href="https://stocklight.io" style="color: var(--teal); text-decoration: none;">stocklight.io</a>
+        </div>
+    </footer>
+</body>
+</html>
