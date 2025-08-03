@@ -144,6 +144,28 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 <body class="bg-dark-bg text-text-primary">
@@ -171,9 +193,37 @@
                         Hebrew
                     </a>
                 </div>
+                <!-- Mobile menu button -->
+                <button id="mobileMenuBtn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-dark-surface border border-text-muted/20 hover:border-primary-cyan/40 transition-colors">
+                    <svg class="w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobileMenu" class="fixed top-16 left-0 right-0 bg-dark-bgSecondary/98 backdrop-blur-lg border-b border-primary-cyan/20 z-40 hidden md:hidden">
+        <div class="section-container py-6">
+            <div class="flex flex-col gap-4 mb-6">
+                <a href="#agents" class="text-text-secondary hover:text-text-primary transition-colors font-medium py-2 border-b border-text-muted/20">Agents</a>
+                <a href="#features" class="text-text-secondary hover:text-text-primary transition-colors font-medium py-2 border-b border-text-muted/20">Features</a>
+                <a href="#roadmap" class="text-text-secondary hover:text-text-primary transition-colors font-medium py-2 border-b border-text-muted/20">Roadmap</a>
+            </div>
+            <div class="flex flex-col gap-3">
+                <a href="https://www.patreon.com/stocklight" target="_blank" class="bg-accent-gold text-dark-bg px-6 py-3 rounded-lg font-semibold hover:bg-accent-gold/90 transition-all duration-200 shadow-lg text-center">
+                    Support Us
+                </a>
+                <a href="https://discord.com/invite/sfuKUqzG4r" target="_blank" class="border border-text-muted text-text-secondary hover:text-text-primary hover:border-text-secondary px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-center">
+                    Join Discord
+                </a>
+                <a href="/index_heb.html" class="border border-text-muted text-text-secondary hover:text-text-primary hover:border-text-secondary px-6 py-3 rounded-lg font-semibold transition-all duration-200 text-center">
+                    Hebrew
+                </a>
+            </div>
+        </div>
+    </div>
 
     <div class="flex min-h-screen pt-16">
         <!-- Main Content -->
@@ -188,17 +238,17 @@
 
                 <div class="relative z-10 section-container text-center">
                     <div class="max-w-5xl mx-auto px-6">
-                        <h1 class="text-5xl md:text-6xl lg:text-8xl font-bold text-center mb-8 animate-fade-in tracking-tight">
+                        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold text-center mb-8 animate-fade-in tracking-tight">
                             <span class="text-text-primary">StockLight</span>
                         </h1>
                         
-                        <h2 class="text-2xl md:text-4xl text-center mb-12 text-primary-cyan font-light animate-fade-in animation-delay-200 tracking-wide">
+                        <h2 class="text-xl sm:text-2xl md:text-4xl text-center mb-12 text-primary-cyan font-light animate-fade-in animation-delay-200 tracking-wide">
                             Your Secret Edge in the Markets
                         </h2>
 
                         <div class="mb-12 animate-fade-in animation-delay-250">
                             <div class="bg-gradient-to-r from-primary-cyan/15 to-primary-blue/15 rounded-2xl p-8 border border-primary-cyan/30 backdrop-blur-lg max-w-5xl mx-auto shadow-2xl shadow-primary-cyan/10">
-                                <p class="text-xl md:text-2xl text-text-primary font-medium text-center leading-relaxed mb-6">
+                                <p class="text-lg sm:text-xl md:text-2xl text-text-primary font-medium text-center leading-relaxed mb-6">
                                     "With StockLight, you get one‑on‑one attention our platform watches the market for you and keeps you updated on what truly matters."
                                 </p>
                                 <div class="flex justify-center">
@@ -210,13 +260,13 @@
                             </div>
                         </div>
 
-                        <p class="text-xl md:text-2xl text-text-secondary text-center mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-300 font-light">
+                        <p class="text-lg sm:text-xl md:text-2xl text-text-secondary text-center mb-16 max-w-4xl mx-auto leading-relaxed animate-fade-in animation-delay-300 font-light">
                             Track what matters. Get alerts that work. Make smarter investment decisions with AI-powered insights.
                         </p>
 
                         <div class="text-center animate-fade-in animation-delay-500">
                             <p class="text-text-muted text-lg mb-6 font-medium">Trusted by professional traders</p>
-                            <div class="flex justify-center items-center gap-12 text-text-secondary text-base font-semibold">
+                            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 text-text-secondary text-sm sm:text-base font-semibold">
                                 <div class="flex items-center gap-2">
                                     <div class="w-2 h-2 bg-accent-gold rounded-full"></div>
                                     <span>Secure</span>
@@ -239,15 +289,15 @@
             <section class="py-24 bg-gradient-to-br from-dark-bgSecondary via-dark-surface to-dark-bgSecondary">
                 <div class="section-container text-center">
                     <div class="max-w-5xl mx-auto px-6">
-                        <h2 class="text-4xl md:text-6xl font-bold text-text-primary mb-8 tracking-tight">
+                        <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-text-primary mb-8 tracking-tight">
                             Not Just Data – Real Understanding
                         </h2>
                         
-                        <p class="text-xl md:text-2xl text-text-secondary mb-16 max-w-3xl mx-auto leading-relaxed font-light">
+                        <p class="text-lg sm:text-xl md:text-2xl text-text-secondary mb-16 max-w-3xl mx-auto leading-relaxed font-light">
                             While others flood you with noise, we deliver clarity that matters.
                         </p>
                         
-                        <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
+                        <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-12 md:gap-20">
                             <div class="flex items-center group">
                                 <div class="text-center">
                                     <div class="w-20 h-20 bg-gradient-to-br from-primary-cyan via-primary-blue to-accent-gold rounded-full flex items-center justify-center mb-6 mx-auto shadow-2xl shadow-primary-cyan/50 group-hover:scale-110 transition-all duration-300">
@@ -289,16 +339,16 @@
                     <div class="text-center mb-20">
                         <div class="flex items-center justify-center gap-6 mb-10">
                             <img src="stocklight-logo.png" alt="StockLight Logo" class="w-16 h-16 object-contain">
-                            <h2 class="text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
+                            <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-text-primary tracking-tight">
                                 Meet the <span class="gradient-text">AI Dream Team</span>
                             </h2>
                         </div>
-                        <p class="text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light px-6">
+                        <p class="text-lg sm:text-xl md:text-2xl text-text-secondary max-w-4xl mx-auto leading-relaxed font-light px-6">
                             Our specialized AI agents bring decades of combined expertise across every corner of the market. Each agent has a unique personality, background, and specialized knowledge to give you the edge you need.
                         </p>
                     </div>
                     
-                    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         <!-- Sophie Morgan Card -->
                         <div class="bg-dark-surface/60 rounded-xl p-6 border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300 hover:scale-[1.02] backdrop-blur-sm">
                             <div class="relative mb-6">
@@ -472,9 +522,13 @@
 
                     <!-- Show Live Market Stream Button -->
                     <div class="text-center mt-12">
-                        <button id="showStreamBtn" class="bg-gradient-to-r from-primary-cyan to-primary-blue hover:from-primary-cyan/80 hover:to-primary-blue/80 text-dark-bg font-semibold py-4 px-8 rounded-xl text-lg transition-all duration-200 hover:scale-105 shadow-lg shadow-primary-cyan/30">
+                        <button id="showStreamBtn" class="bg-gradient-to-r from-primary-cyan to-primary-blue hover:from-primary-cyan/80 hover:to-primary-blue/80 text-dark-bg font-semibold py-4 px-8 rounded-xl text-base sm:text-lg transition-all duration-200 hover:scale-105 shadow-lg shadow-primary-cyan/30">
                             Show Live Market Stream
                         </button>
+                        <!-- Mobile Live Stream -->
+                        <div id="mobileInsights" class="lg:hidden mt-8 space-y-4">
+                            <!-- Mobile insights will be populated here -->
+                        </div>
                     </div>
                 </div>
             </section>
@@ -483,10 +537,10 @@
             <section id="features" class="py-24 bg-dark-bgSecondary">
                 <div class="section-container">
                     <div class="text-center mb-16">
-                        <h2 class="text-4xl md:text-5xl font-bold text-text-primary mb-6">Platform Features</h2>
-                        <p class="text-xl text-text-secondary max-w-2xl mx-auto">Professional tools for serious traders</p>
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary mb-6">Platform Features</h2>
+                        <p class="text-lg sm:text-xl text-text-secondary max-w-2xl mx-auto">Professional tools for serious traders</p>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                         <div class="p-6 bg-dark-surface/60 rounded-xl border border-text-muted/20 hover:border-primary-cyan/40 transition-all duration-300">
                             <h3 class="text-xl font-semibold text-text-primary mb-3">Crystal-Clear Market Updates</h3>
                             <p class="text-text-secondary">Daily stock news simplified into what actually matters.</p>
@@ -565,7 +619,7 @@
         </main>
 
         <!-- Live Market Insights Sidebar -->
-        <aside class="fixed top-16 right-0 w-96 h-full bg-dark-bgSecondary/95 backdrop-blur-lg border-l border-primary-cyan/20 hidden lg:block">
+        <aside class="fixed top-16 right-0 w-96 h-full bg-dark-bgSecondary/95 backdrop-blur-lg border-l border-primary-cyan/20 hidden lg:block z-30">
             <div class="sidebar-container p-6">
                 <div class="flex items-center justify-between mb-6 pb-4 border-b border-primary-cyan/20">
                     <h3 class="text-text-primary font-bold text-xl">Live Market Insights</h3>
@@ -876,14 +930,34 @@
             }, Math.random() * 1000 + 2000); // Random between 2-3 seconds
         }
 
+        function populateMobileInsights() {
+            if (window.innerWidth < 1024) {
+                const mobileContainer = document.getElementById('mobileInsights');
+                const sidebarContainer = document.getElementById('insightCardsContainer');
+                
+                if (mobileContainer && sidebarContainer) {
+                    // Copy first 3 insights to mobile
+                    const insights = sidebarContainer.children;
+                    mobileContainer.innerHTML = '';
+                    
+                    for (let i = 0; i < Math.min(3, insights.length); i++) {
+                        const clone = insights[i].cloneNode(true);
+                        mobileContainer.appendChild(clone);
+                    }
+                }
+            }
+        }
+
         // Show Live Market Stream button functionality
         document.getElementById('showStreamBtn').addEventListener('click', function() {
             const sidebar = document.querySelector('aside');
             const btn = this;
             
             if (window.innerWidth < 1024) {
-                // On mobile/tablet, scroll to bottom to show mobile insights
-                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+                // On mobile/tablet, populate and show mobile insights
+                populateMobileInsights();
+                const mobileInsights = document.getElementById('mobileInsights');
+                mobileInsights.scrollIntoView({ behavior: 'smooth' });
             } else {
                 // On desktop, highlight the sidebar
                 sidebar.classList.add('animate-pulse');
@@ -928,6 +1002,48 @@
                 header.style.background = 'rgba(10, 17, 26, 0.98)';
             } else {
                 header.style.background = 'rgba(10, 17, 26, 0.95)';
+            }
+        });
+
+        // Mobile menu functionality
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenu.style.animation = 'slideDown 0.3s ease-out';
+            } else {
+                mobileMenu.style.animation = 'slideUp 0.3s ease-out';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            }
+        });
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.style.animation = 'slideUp 0.3s ease-out';
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                }, 300);
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.style.animation = 'slideUp 0.3s ease-out';
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                }
             }
         });
     </script>
